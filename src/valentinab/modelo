@@ -1,0 +1,28 @@
+@startuml
+
+class Universidad {
+    - String nombreUni;
+    - String ubicacionUni;
+    - int numFacultades;
+    - int numEstudiantes;
+}
+
+class Profesor {
+    + String nombreProfesor;
+    - String especialidad;
+    - int tiempoExperiencia;
+    - String email;
+}
+
+class Asignatura {
+    - String nombreAsignatura;
+    - String descripcion;
+    - int creditos;
+    - Profesor profesorResponsable;
+}
+
+Universidad "1" -- "*" Profesor : pertenecer
+Profesor "1" -- "*" Asignatura : enseñar
+Universidad "1" -- "*" Asignatura : ofrecer
+
+@enduml
